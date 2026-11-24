@@ -27,18 +27,10 @@ echo    WEBSHOP ELETRONICOS - INICIANDO (WIN)
 echo ==========================================
 echo.
 
-where java >nul 2>nul
+where node >nul 2>nul
 if errorlevel 1 (
-	echo [ERRO] Java nao encontrado. Instale o Java 17 ou mais novo.
-	echo        https://adoptium.net
-	pause
-	exit /b 1
-)
-
-where mvn >nul 2>nul
-if errorlevel 1 (
-	echo [ERRO] Maven nao encontrado. Instale o Maven e coloque no PATH.
-	echo        https://maven.apache.org/download.cgi
+	echo [ERRO] Node.js nao encontrado. Instale o Node.js e tente de novo.
+	echo        https://nodejs.org
 	pause
 	exit /b 1
 )
@@ -53,15 +45,15 @@ if not errorlevel 1 (
 	echo [OK] A API ja esta rodando na porta 8080.
 ) else (
 	echo [1/2] Subindo a API em outra janela, aguarde...
-	start "WebShop API" /D "%~dp0api" cmd /k mvn spring-boot:run
+	start "WebShop API" /D "%~dp0api" cmd /k node servidor.js
 
 	set PRONTO=0
-	for /L %%i in (1,1,90) do (
+	for /L %%i in (1,1,30) do (
 		if !PRONTO!==0 (
 			curl -s -o nul http://localhost:8080/produtos >nul 2>nul && set PRONTO=1
 			if !PRONTO!==0 (
 				<nul set /p "=."
-				ping -n 3 127.0.0.1 >nul
+				ping -n 2 127.0.0.1 >nul
 			)
 		)
 	)
@@ -97,15 +89,9 @@ echo "   WEBSHOP ELETRONICOS - INICIANDO (LINUX)"
 echo "=========================================="
 echo ""
 
-if ! command -v java >/dev/null 2>&1; then
-	echo "[ERRO] Java nao encontrado! Instale o Java 17 ou mais novo."
-	echo "       ex: sudo apt install openjdk-17-jdk"
-	exit 1
-fi
-
-if ! command -v mvn >/dev/null 2>&1; then
-	echo "[ERRO] Maven nao encontrado! Instale o Maven."
-	echo "       ex: sudo apt install maven"
+if ! command -v node >/dev/null 2>&1; then
+	echo "[ERRO] Node.js nao encontrado! Instale o Node.js e tente de novo."
+	echo "       ex: sudo apt install nodejs"
 	exit 1
 fi
 
@@ -128,17 +114,15 @@ if api_no_ar; then
 	echo "[OK] A API ja esta rodando na porta 8080."
 else
 	echo "[1/2] Subindo a API (log em api.log), aguarde..."
-	cd "$PASTA/api" || exit 1
-	mvn spring-boot:run > "$PASTA/api.log" 2>&1 &
+	node "$PASTA/api/servidor.js" > "$PASTA/api.log" 2>&1 &
 	PID_API=$!
-	cd "$PASTA" || exit 1
 
 	# quando apertar Ctrl+C derruba a api junto
 	trap 'echo ""; echo "Parando a API..."; kill $PID_API 2>/dev/null; exit 0' INT TERM
 
 	PRONTO=0
 	i=0
-	while [ $i -lt 90 ]; do
+	while [ $i -lt 30 ]; do
 		if api_no_ar; then
 			PRONTO=1
 			break
@@ -149,7 +133,7 @@ else
 			exit 1
 		fi
 		printf "."
-		sleep 2
+		sleep 1
 		i=$((i + 1))
 	done
 	echo ""

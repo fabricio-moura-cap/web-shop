@@ -10,28 +10,28 @@ mensagem avisando que o pedido sera enviado.
 
 ```
 web-shop/
+  iniciar.cmd        script que sobe tudo (Windows e Linux)
   frontend/          site em HTML, CSS e JavaScript puro
     index.html       pagina inicial com os produtos
     carrinho.html    carrinho e dados de entrega
     css/estilo.css
     js/script.js
     imagens/
-  api/               API em Spring Boot (Java)
-    pom.xml
-    src/main/java/br/com/webshop/
+  api/
+    servidor.js      API em Node.js (sem nenhum modulo de fora)
 ```
 
 ## Requisitos
 
-- Java 17 ou mais novo
-- Maven 3.6 ou mais novo
+- Node.js (qualquer versao recente)
 - Um navegador (Firefox, Chrome, IE...)
+
+Nao precisa rodar `npm install`, a API so usa o que ja vem com o Node.
 
 Para conferir se ja tem instalado:
 
 ```
-java -version
-mvn -v
+node -v
 ```
 
 ## Como inicializar o projeto
@@ -52,19 +52,9 @@ Ctrl+C para tudo.
 
 #### 1. Subir a API
 
-Abra o terminal na pasta `api` e rode:
-
 ```
 cd api
-mvn spring-boot:run
-```
-
-Ou se preferir gerar o .jar:
-
-```
-cd api
-mvn package
-java -jar target/webshop-api-1.0.jar
+node servidor.js
 ```
 
 Quando aparecer `WEBSHOP API RODANDO NA PORTA 8080` a API esta no ar em
@@ -77,16 +67,6 @@ http://localhost:8080/produtos
 
 Com a API rodando, basta abrir o arquivo `frontend/index.html` no navegador
 (duplo clique no arquivo).
-
-Se o seu navegador bloquear as requisicoes abrindo direto pelo arquivo, da pra
-subir um servidor simples na pasta `frontend`, por exemplo:
-
-```
-cd frontend
-python -m http.server 5500
-```
-
-e acessar http://localhost:5500
 
 **Importante:** se a API nao estiver ligada o site mostra a mensagem
 "Nao foi possivel carregar os produtos".
@@ -102,24 +82,19 @@ e acessar http://localhost:5500
 | POST | /carrinho/remover?id= | remove o produto do carrinho |
 | POST | /pedido/finalizar | finaliza o pedido (nome, email, endereco, cidade, uf, cep, pagamento) |
 
-## Por que Spring Boot?
+## Por que Node.js?
 
 O site em si e so HTML, CSS e JavaScript, mas precisava de um "servidor" pra
 simular o que acontece numa loja de verdade: guardar o carrinho, controlar o
-estoque e gerar o numero do pedido. Escolhemos o Spring Boot porque:
+estoque e gerar o numero do pedido. Escolhemos o Node.js porque:
 
-- **Java** e a linguagem que a gente ja usava no curso/trabalho, entao nao
-  precisou aprender outra linguagem so pra fazer o servidor.
-- **Nao precisa instalar Tomcat** nem configurar servidor de aplicacao. O
-  Spring Boot ja vem com o servidor embutido, e so rodar um comando e pronto.
-- **Pouca configuracao**: sem um monte de XML, so um `pom.xml` e o arquivo
-  `application.properties`.
-- Fica facil criar as rotas que o JavaScript chama (`@GetMapping`,
-  `@PostMapping`) e ele ja devolve as respostas em JSON automaticamente.
-- Com o `@CrossOrigin` o site consegue chamar a API mesmo estando em outro
-  endereco/porta.
-- Se um dia a loja crescer da pra ligar num banco de dados de verdade
-  (MySQL, por exemplo) sem ter que refazer tudo.
+- **E JavaScript**, a mesma linguagem do site. Nao precisou aprender outra
+  linguagem so pra fazer o servidor.
+- **Nao precisa instalar mais nada**: nem Tomcat, nem Maven, nem pacotes do
+  npm. O modulo `http` que ja vem com o Node da conta de tudo.
+- **Um arquivo so** (`servidor.js`) e um comando so (`node servidor.js`).
+- Sobe em menos de um segundo, bom pra ficar testando.
+- Devolve as respostas em JSON, que o JavaScript do site ja entende direto.
 
 A ideia aqui e so **simular** as acoes, por isso nao tem banco de dados.
 

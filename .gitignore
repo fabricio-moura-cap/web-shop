@@ -1,11 +1,6 @@
-target/
-*.class
 .idea/
-*.iml
-.settings/
-.project
-.classpath
 .vscode/
+node_modules/
 Thumbs.db
 .claude/
 api.log
