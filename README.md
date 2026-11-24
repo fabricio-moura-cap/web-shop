@@ -10,15 +10,16 @@ mensagem avisando que o pedido sera enviado.
 
 ```
 web-shop/
-  iniciar.cmd        script que sobe tudo (Windows e Linux)
-  frontend/          site em HTML, CSS e JavaScript puro
-    index.html       pagina inicial com os produtos
-    carrinho.html    carrinho e dados de entrega
+  iniciar-windows.cmd  script que sobe tudo no Windows
+  iniciar-linux.sh     script que sobe tudo no Linux
+  frontend/            site em HTML, CSS e JavaScript puro
+    index.html         pagina inicial com os produtos
+    carrinho.html      carrinho e dados de entrega
     css/estilo.css
     js/script.js
     imagens/
   api/
-    servidor.js      API em Node.js (sem nenhum modulo de fora)
+    servidor.js        API em Node.js (sem nenhum modulo de fora)
 ```
 
 ## Requisitos
@@ -38,11 +39,13 @@ node -v
 
 ### Jeito rapido (script)
 
-Na raiz do projeto tem o `iniciar.cmd`, que sobe a API, espera ela ficar no
-ar e abre o site no navegador. O mesmo arquivo funciona nos dois sistemas:
+Na raiz do projeto tem um script para cada sistema. Ele sobe a API, espera
+ela ficar no ar e abre o site no navegador:
 
-- **Windows:** de dois cliques no `iniciar.cmd` (ou rode `iniciar.cmd` no prompt)
-- **Linux:** `sh iniciar.cmd`
+- **Windows:** de dois cliques no `iniciar-windows.cmd`
+  (ou rode `iniciar-windows.cmd` no prompt)
+- **Linux:** `sh iniciar-linux.sh`
+  (ou `chmod +x iniciar-linux.sh` e depois `./iniciar-linux.sh`)
 
 No Windows a API abre numa janela separada chamada "WebShop API" (feche ela
 para parar). No Linux a API roda em segundo plano com log em `api.log`, e o
