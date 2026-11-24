@@ -1,0 +1,11 @@
+target/
+*.class
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+.vscode/
+Thumbs.db
+.claude/
+api.log

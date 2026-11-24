@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="120" viewBox="0 0 160 120">
+<rect x="52" y="8" width="56" height="104" rx="8" fill="#c4161c"/>
+<rect x="52" y="8" width="28" height="104" rx="8" fill="#fff" opacity="0.15"/>
+<rect x="59" y="16" width="42" height="34" fill="#111"/>
+<rect x="61" y="18" width="38" height="30" fill="#2d6fb0"/>
+<rect x="64" y="38" width="30" height="3" fill="#fff" opacity="0.6"/>
+<circle cx="80" cy="80" r="20" fill="#eee"/>
+<circle cx="80" cy="80" r="8" fill="#c4161c"/>
+<text x="80" y="66" font-family="Arial" font-size="6" text-anchor="middle" fill="#666">MENU</text>
+<path d="M95 78 L99 80 L95 82 Z" fill="#666"/><path d="M65 78 L61 80 L65 82 Z" fill="#666"/>
+</svg>

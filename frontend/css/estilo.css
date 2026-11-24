@@ -1,0 +1,571 @@
+/* WebShop Eletronicos - folha de estilo */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #dfe6ee;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+a {
+	color: #1a5799;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+#geral {
+	width: 960px;
+	margin: 0 auto;
+	background: #ffffff;
+	border-left: 1px solid #c5ced8;
+	border-right: 1px solid #c5ced8;
+}
+
+/* ---------- TOPO ---------- */
+
+#topo {
+	height: 90px;
+	padding: 0 20px;
+	background: #ffffff;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+#logo {
+	float: left;
+	padding-top: 18px;
+}
+
+#logo a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+	letter-spacing: -2px;
+	text-decoration: none;
+}
+
+.logo1 {
+	color: #1a5799;
+}
+
+.logo2 {
+	color: #f7931e;
+}
+
+.slogan {
+	font-size: 11px;
+	color: #888888;
+	font-style: italic;
+	margin-top: -2px;
+}
+
+#topo-direita {
+	float: right;
+	padding-top: 22px;
+	text-align: right;
+}
+
+.atendimento {
+	font-size: 11px;
+	color: #666666;
+	margin-bottom: 8px;
+}
+
+#link-carrinho {
+	display: inline-block;
+	padding: 6px 12px 6px 12px;
+	background: #f2f7fc;
+	border: 1px solid #a9c3de;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	font-weight: bold;
+	color: #1a5799;
+}
+
+#link-carrinho:hover {
+	background: #e2eefa;
+	text-decoration: none;
+}
+
+/* ---------- MENU ---------- */
+
+#menu {
+	background: #1a5799;
+	background: -moz-linear-gradient(top, #3b7bc0 0%, #1a5799 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#3b7bc0), to(#1a5799));
+	background: linear-gradient(to bottom, #3b7bc0 0%, #1a5799 100%);
+	border-bottom: 3px solid #f7931e;
+	height: 34px;
+}
+
+#menu ul {
+	list-style: none;
+	padding-left: 10px;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu li a {
+	display: block;
+	padding: 0 16px;
+	line-height: 34px;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 12px;
+	border-right: 1px solid #2c6aab;
+	text-decoration: none;
+}
+
+#menu li a:hover, #menu li a.ativo {
+	background: #154a82;
+}
+
+/* ---------- BANNER ---------- */
+
+#banner {
+	margin: 12px 12px 0 12px;
+	height: 110px;
+	background: #fdb84f;
+	background: -moz-linear-gradient(top, #ffcd6b 0%, #f7931e 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffcd6b), to(#f7931e));
+	background: linear-gradient(to bottom, #ffcd6b 0%, #f7931e 100%);
+	border: 1px solid #e0811a;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	color: #ffffff;
+}
+
+.banner-texto {
+	float: left;
+	padding: 18px 0 0 30px;
+}
+
+.banner-texto h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	text-shadow: 1px 1px 2px #b5640c;
+}
+
+.banner-texto p {
+	font-size: 15px;
+	text-shadow: 1px 1px 1px #b5640c;
+}
+
+.banner-texto small {
+	font-size: 10px;
+	color: #fff4e0;
+}
+
+.banner-parcela {
+	float: right;
+	margin: 12px 30px 0 0;
+	width: 100px;
+	height: 76px;
+	padding-top: 6px;
+	background: #c4161c;
+	border: 2px solid #ffffff;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 14px;
+}
+
+.banner-parcela span {
+	font-size: 30px;
+	line-height: 32px;
+}
+
+/* ---------- CONTEUDO ---------- */
+
+#conteudo {
+	padding: 12px;
+}
+
+#lateral {
+	float: left;
+	width: 190px;
+}
+
+.caixa {
+	border: 1px solid #d5dde6;
+	margin-bottom: 12px;
+	background: #f7f9fb;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.caixa h3 {
+	background: #e6edf4;
+	border-bottom: 1px solid #d5dde6;
+	padding: 7px 10px;
+	font-size: 12px;
+	color: #1a5799;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-radius: 5px 5px 0 0;
+}
+
+.caixa ul {
+	list-style: none;
+	padding: 5px 10px;
+}
+
+.caixa li {
+	padding: 4px 0 4px 10px;
+	border-bottom: 1px dotted #cccccc;
+	background: url(../imagens/seta.svg) no-repeat left center;
+}
+
+.caixa li:last-child {
+	border-bottom: 0;
+}
+
+.caixa p {
+	padding: 6px 10px;
+	font-size: 11px;
+	line-height: 15px;
+}
+
+.seguro h3 {
+	color: #3d8b1f;
+}
+
+#principal {
+	float: right;
+	width: 732px;
+}
+
+h2.titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	color: #1a5799;
+	border-bottom: 2px solid #e3e3e3;
+	padding-bottom: 5px;
+	margin-bottom: 12px;
+}
+
+.carregando {
+	padding: 30px;
+	text-align: center;
+	color: #999999;
+}
+
+.erro {
+	padding: 15px;
+	background: #fff0f0;
+	border: 1px solid #e8a5a5;
+	color: #b00000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* ---------- PRODUTOS ---------- */
+
+.produto {
+	float: left;
+	position: relative;
+	width: 220px;
+	height: 290px;
+	margin: 0 12px 12px 0;
+	padding: 10px 0 0 0;
+	border: 1px solid #dddddd;
+	text-align: center;
+	background: #ffffff;
+}
+
+.produto:hover {
+	border: 1px solid #a9c3de;
+	-moz-box-shadow: 0 0 6px #c9d9ea;
+	-webkit-box-shadow: 0 0 6px #c9d9ea;
+	box-shadow: 0 0 6px #c9d9ea;
+}
+
+.selo {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	background: #c4161c;
+	color: #ffffff;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 2px 6px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.produto .foto {
+	height: 125px;
+}
+
+.produto .nome {
+	height: 32px;
+	padding: 0 10px;
+	font-weight: bold;
+	color: #1a5799;
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.preco-antigo {
+	color: #999999;
+	text-decoration: line-through;
+	font-size: 11px;
+	margin-top: 4px;
+}
+
+.preco {
+	color: #c4161c;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.parcela {
+	color: #666666;
+	font-size: 11px;
+	margin-bottom: 8px;
+}
+
+/* ---------- BOTOES ---------- */
+
+.botao {
+	padding: 6px 14px;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	cursor: pointer;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.botao-laranja {
+	background: #f7931e;
+	background: -moz-linear-gradient(top, #fbb450 0%, #f7931e 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbb450), to(#f7931e));
+	background: linear-gradient(to bottom, #fbb450 0%, #f7931e 100%);
+	border: 1px solid #d97c0f;
+	text-shadow: 0 -1px 0 #c76f0a;
+}
+
+.botao-laranja:hover {
+	background: #f08a10;
+	background: -moz-linear-gradient(top, #f7a535 0%, #ea8409 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f7a535), to(#ea8409));
+	background: linear-gradient(to bottom, #f7a535 0%, #ea8409 100%);
+}
+
+.botao-verde {
+	background: #4ea52c;
+	background: -moz-linear-gradient(top, #6cc644 0%, #3d8b1f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#6cc644), to(#3d8b1f));
+	background: linear-gradient(to bottom, #6cc644 0%, #3d8b1f 100%);
+	border: 1px solid #357a1a;
+	text-shadow: 0 -1px 0 #2d6b14;
+	font-size: 14px;
+	padding: 8px 20px;
+}
+
+.botao-verde:hover {
+	background: #3d8b1f;
+}
+
+.botao-cinza {
+	background: #aaaaaa;
+	background: -moz-linear-gradient(top, #cccccc 0%, #999999 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#999999));
+	background: linear-gradient(to bottom, #cccccc 0%, #999999 100%);
+	border: 1px solid #888888;
+}
+
+.botao-cinza[disabled] {
+	cursor: default;
+	opacity: 0.7;
+}
+
+.botao-qtd {
+	width: 22px;
+	height: 22px;
+	background: #eeeeee;
+	border: 1px solid #bbbbbb;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #555555;
+}
+
+.botao-qtd:hover {
+	background: #dddddd;
+}
+
+/* ---------- CARRINHO ---------- */
+
+.tabela-carrinho {
+	border: 1px solid #d5dde6;
+	border-collapse: collapse;
+}
+
+.tabela-carrinho th {
+	background: #e6edf4;
+	color: #1a5799;
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #d5dde6;
+	font-size: 12px;
+}
+
+.tabela-carrinho td {
+	padding: 8px;
+	border-bottom: 1px solid #eeeeee;
+	vertical-align: middle;
+}
+
+.tabela-carrinho .linha-par td {
+	background: #fafbfc;
+}
+
+a.remover {
+	color: #c4161c;
+	font-size: 11px;
+}
+
+.totais {
+	float: right;
+	width: 280px;
+	margin: 12px 0 20px 0;
+	padding: 10px 15px;
+	background: #fffbe6;
+	border: 1px solid #f0dc8c;
+	text-align: right;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.totais p {
+	padding: 2px 0;
+}
+
+.totais .total {
+	font-size: 18px;
+	font-weight: bold;
+	color: #c4161c;
+	font-family: Arial, Helvetica, sans-serif;
+	border-top: 1px solid #f0dc8c;
+	padding-top: 6px;
+	margin-top: 4px;
+}
+
+.frete-gratis {
+	color: #3d8b1f;
+	font-weight: bold;
+}
+
+.carrinho-vazio {
+	padding: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #777777;
+}
+
+.carrinho-vazio p {
+	margin-bottom: 15px;
+}
+
+.form-tabela {
+	margin-bottom: 20px;
+}
+
+.form-tabela td.label {
+	text-align: right;
+	font-weight: bold;
+	width: 130px;
+	color: #555555;
+}
+
+.form-tabela input[type=text], .form-tabela select {
+	padding: 4px;
+	border: 1px solid #bbbbbb;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.form-tabela input[type=text]:focus {
+	border: 1px solid #3b7bc0;
+	background: #fffff0;
+}
+
+.dica {
+	color: #999999;
+	font-size: 10px;
+}
+
+#mensagem-pedido {
+	margin: 10px 0 20px 0;
+	padding: 20px 25px;
+	background: #effbe9;
+	border: 1px solid #9fd38a;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	line-height: 22px;
+}
+
+#mensagem-pedido h3 {
+	color: #3d8b1f;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+/* ---------- RODAPE ---------- */
+
+#rodape {
+	background: #3a3f45;
+	color: #bbbbbb;
+	text-align: center;
+	padding: 15px;
+	font-size: 11px;
+	line-height: 20px;
+	border-top: 3px solid #f7931e;
+}
+
+#rodape a {
+	color: #ffffff;
+}
+
+#rodape .pequeno {
+	font-size: 10px;
+	color: #888888;
+}

@@ -1,0 +1,2 @@
+# o iniciar.cmd precisa ficar com final de linha LF para funcionar no Linux
+iniciar.cmd text eol=lf
